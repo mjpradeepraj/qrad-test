@@ -66,8 +66,12 @@ for log in json_data:
     id1=log['id']
     name1=log['name']
     desc= log['description']
-    log_src='log source'#log['protocol_parameters']
-    
+    log_src=log['protocol_parameters']
+    lenth= (len(log_src)-1)
+    while lenth > 0:
+        if log_src[lenth]['name'] == "identifier":
+            org_log_src=(log_src[lenth]['value'])
+        lenth=lenth-1
     #print(log_src[1]['value'])
     
     ###Log source Status Read####
@@ -87,7 +91,7 @@ for log in json_data:
         #####Date read#####
         last_event= log['last_event_time']
         if str(last_event) == "0":
-            print('"',id1,'","',name1,'","',desc,'","',log_src,'","',stat,'","',str(last_event),'","','NIL','"',file=file_object)
+            print('"',id1,'","',name1,'","',desc,'","',org_log_src,'","',stat,'","',str(last_event),'","','NIL','"',file=file_object)
             continue
         else:
             base_datetime = datetime.datetime( 1970, 1, 1 )
@@ -96,9 +100,9 @@ for log in json_data:
             last_date=target_date.strftime("%m/%d/%Y %I:%M %p")
             not_con=(datetime.datetime.now() - (parse(last_date)))
             answer= not_con > datetime.timedelta(days = count_days)
-            if answer == True:
-                if log['enabled'] == True:
-                    print('"',id1,'","',name1,'","',desc,'","',log_src,'","',stat,'","',last_date,'","',not_con,'"',file=file_object)
+            #if answer == True:
+            if log['enabled'] == True:
+                print('"',id1,'","',name1,'","',desc,'","',org_log_src,'","',stat,'","',last_date,'","',not_con,'"',file=file_object)
     else:
         continue
     
