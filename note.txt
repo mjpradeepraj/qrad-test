@@ -1,0 +1,4 @@
+sudo dhclient eth0
+
+https://www.snaplabs.io/insights/command-and-control-with-powershell-empire-pt3
+https://www.hackingarticles.in/lateral-movement-pass-the-hash-attack/
