@@ -4,6 +4,6 @@ https://www.snaplabs.io/insights/command-and-control-with-powershell-empire-pt3
 https://www.hackingarticles.in/lateral-movement-pass-the-hash-attack/
 
 
-qemu-system-x86_64.exe -drive file=linux.img,index=0,media=disk,format=raw -cdrom H: -m 4G -smp 4 -L Bios -boot menu=on -rtc base=localtime,clock=host -parallel none -serial none -name ubuntu-no-acpi -no-hpet -no-reboot --accel tcg,thread=multi -boot d
+qemu-system-x86_64.exe -drive file=linux.img,index=0,media=disk,format=raw -cdrom E: -m 4G -smp 4 -L Bios -boot menu=on -rtc base=localtime,clock=host -parallel none -serial none -name ubuntu-no-acpi -no-hpet -no-reboot --accel tcg,thread=multi -boot d
 
 qemu-img create linux.img 32G
