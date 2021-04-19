@@ -7,3 +7,16 @@ https://www.hackingarticles.in/lateral-movement-pass-the-hash-attack/
 qemu-system-x86_64.exe -drive file=linux.img,index=0,media=disk,format=raw -cdrom E: -m 4G -smp 4 -L Bios -boot menu=on -rtc base=localtime,clock=host -parallel none -serial none -name ubuntu-no-acpi -no-hpet -no-reboot --accel tcg,thread=multi -boot d
 
 qemu-img create linux.img 32G
+
+
+Get-ADGroup -Identity "Domain Admins" -Properties Members | Select-Object -ExpandProperty Members
+Add-ADGroupMember -Identity "Domain Admins" -Members pradeep
+
+
+net group /domain
+net group "Domain Admins" /domain
+net group "Enterprise Admins" pradeep /add /domain
+
+
+https://edermi.github.io/post/2018/native_rdp_pass_the_hash/
+https://stealthbits.com/blog/passing-the-hash-with-mimikatz/
